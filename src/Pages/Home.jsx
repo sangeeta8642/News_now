@@ -15,9 +15,13 @@ const HomePage = () => {
   const [page, setPage] = useState(1);
   const [category, setCategory] = useState('');
 
+  console.log(articles);
+  
+
 
   useEffect(() => {
-    dispatch(fetchArticles({ category, page }));
+    dispatch(fetchArticles({ category }));
+    // dispatch(fetchAllArticles());
   }, [category, page, dispatch]);
 
   return (
@@ -26,7 +30,7 @@ const HomePage = () => {
       <Slide/>
      
       <ArticleList articles={articles} />
-      <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} />
+      {/* <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} /> */}
     </div>
   );
 };

@@ -1,10 +1,9 @@
-
 // Login page
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Swal from 'sweetalert2';
-import 'sweetalert2/dist/sweetalert2.min.css';
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
 
 const Login = () => {
   const [username, setUsername] = useState("admin@123");
@@ -12,41 +11,40 @@ const Login = () => {
   const nav = useNavigate();
 
   const Login = () => {
-    if (username=== "admin@123" && password === "admin@123") {
-      const user = { username, password,myfavorites:[] };
+    if (username === "admin@123" && password === "admin@123") {
+      const user = { username, password, myfavorites: [] };
 
       Swal.fire({
-        title: 'Login Successful!',
-        icon: 'success',
+        title: "Login Successful!",
+        icon: "success",
         timer: 1500,
         toast: true,
         timerProgressBar: true,
-        position: 'top',
-        showConfirmButton: false
+        position: "top",
+        showConfirmButton: false,
       });
 
-      localStorage.setItem("user",JSON.stringify(user))
+      localStorage.setItem("user", JSON.stringify(user));
       nav("/");
-    }
-    else if (username === '' || password === '') {
+    } else if (username === "" || password === "") {
       Swal.fire({
-        title: 'Please enter valid credentials',
-        icon: 'error',
+        title: "Please enter valid credentials",
+        icon: "error",
         timer: 1500,
         timerProgressBar: true,
         toast: true,
-        position: 'top',
-        showConfirmButton: false
+        position: "top",
+        showConfirmButton: false,
       });
     } else {
       Swal.fire({
-        title: 'User not found',
-        icon: 'error',
+        title: "User not found",
+        icon: "error",
         timer: 1500,
         timerProgressBar: true,
         toast: true,
-        position: 'top',
-        showConfirmButton: false
+        position: "top",
+        showConfirmButton: false,
       });
     }
   };
@@ -79,7 +77,11 @@ const Login = () => {
           </button>
           <h2 className="text-center text-3xl font-semibold">Login</h2>
         </div>
-        <form method="POST" action="/" className="mt-8 space-y-6 flex flex-col ">
+        <form
+          method="POST"
+          action="/"
+          className="mt-8 space-y-6 flex flex-col "
+        >
           <div>
             <div className="rounded-md shadow-sm -space-y-px flex flex-col gap-10">
               <input
